@@ -1,0 +1,27 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+    - texlive-xetex
+    - texlive-latex-extra
+    - lmodern
+    - texlive-latex-recommended
+    - xzdec
+    - texlive-fonts-recommended
+script:
+- tlmgr init-usertree
+- tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
+- tlmgr update --all
+- tlmgr install etoolbox tcolorbox framed polyglossia hyperref pgf xcolor
+- xelatex valszam.tex
+- xelatex valszam.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: kb3vehNrh+fMCj/HCFiSiuzEG2RimDc6KkW9Rc3+0DV7rQ4onY3ge1NoiSgk/D3rWGabnpzwnmIJdUf8a0KeIYsewSA0nn+s2QJBGpLgXlMs1h27PXZNnLzNH3tQVsDTqYjd35IWgdSATeEGC499Zp82vQC/l8FWjbxLsdIHHWLENh8PEQrYNc7xLp5aPFvSfo7MaKOynsxh89Mw/noM++iyT5ke7HKC4I3nEojskfXb0rTN+sRilLohjU9deFA1EwLyVBdbkTcyWFv6/YPw+o15FmBlqiFo2zlM12ZihIMUCjmlCQ/YwEd5VRQPy43TW59z5QtzaT5E17MVXv8PkisxFbQ7JDoCsroZGMWwbW0IvqJuHkKZecbm83OE+oHjfsPQcBuRAKntEEolbE30P0uFgWnULnl054jB5Wuxfz/YpYpTya4sKVBZ0i1XAatVn60DBwhEWBImn7YqGH33Uc2bW0ptxtf/KkmVwVPrPzP7MKHuTmp29ONiEwmxRpzy3U1lijt6DnE3bW0UTX11c79DW56u2r28JcTffMdHiDD2SZCiY2WTHuH1WkrGe6bn17LJfxX+GDvdWFXSvbmkiqTA0POnf/OpIUSgYap82mbDGSaKZz1+qI6WFIg7U8Dm8Y3JFih5rqHMQxQvdkDe2ZtYh9VFZLb+qR2AAH0sFj0=
+  file: valszam.pdf
+  skip-cleanup: true
+  overwrite: true
+  on:
+    repo: bme-notes/valszam

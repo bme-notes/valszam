@@ -1,0 +1,59 @@
+\section{Nagyszámok törvényei}
+
+\subsection{Konvergencia fajtái}
+
+	\textbf{Csökkenő sorrendben:} egy valószínűséggel(1v) $>$ r edik momentumba tart $(L_r) >$ Sztochasztikus konvergencia(st) $>$ Eloszlásban konvergál (e)
+
+\subsection{Törvények}
+\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	IV.3.1 (Csebisev-féle gyenge alak)\\[2pt]
+		\forceindent Legyenek $X_1,X_2,\ldots,X_n$ azonos eloszlásúak, páronként függetlenek. Létezzék a közös\\[1pt] $m = \EX_i \land$  $D^2 = \Szoras_i \Longrightarrow$  $Z_n = \dfrac{X_1+X_2+\ldots+X_n}{n}$ valószínűségváltozó-sorozatra $Z_n \xrightarrow{st} m = \EX_i$\\[2pt]
+		vagyis: $\forall \Gorog{\epsilon} > 0$ esetén $\textbf{P}(|Z_n-m| \geq \Gorog{\epsilon}) \rightarrow 0 \quad \mathbf{(n \rightarrow \infty )} $\\[3pt]
+\end{tetel}
+    \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	IV.3.2 (Bernoulli-féle gyenge alak)\\[2pt]
+	\forceindent $A \in \mathfrak{F}$ egy pozitív valószínűségű esemény: $p = \mathbf{P}(A) > 0$ Végezzünk el egy végtelen kísérlet sorozatot (Bernoulli)
+	\[ X_i =  \begin{cases}
+      1 & ,A_i\ bekovetkezik \\
+      0 & ,A_i\ nem\ kovetkezik\ be
+   \end{cases} \]
+$X_i$-k teljesen függetlenek és azonos eloszlásúak (Indikátor v.v)\\[2pt]
+$\EX_i = p \quad \Szoras_i = pq$. Legyen $Z_n = \dfrac{X_1+X_2+\ldots+X_n}{n} = r_n(A)$ a relatív gyakoriság.\\[2pt]
+$\Longrightarrow r_n(A) \xrightarrow{st} p$,\quad
+másképpen $\forall \Gorog{\epsilon} > 0$ esetén $\textbf{P}(|r_n(A)-p| \geq \Gorog{\epsilon}) \rightarrow 0 \quad \mathbf{(n \rightarrow \infty )}$\\[3pt]
+\small \textit{Megjegyzés:} A tétel azt mondja ki, hogy a relatív gyakoriság jól közelíti az esemény elméleti valószínűségét. \normalsize \\[3pt]
+\end{tetel}
+\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	IV.3.3 (Kolmogrov-féle "erős" törvény)\\[2pt]
+		\forceindent Legyenek az $X_1,X_2,\ldots,X_n$ valószínűségi változók teljesen független. Létezzék a közös \\[2pt]$m = \EX_i$ $\land\ \exists \Szoras_i$, melyre $\sum\limits_{i=1}^\infty \dfrac{\Szoras_i}{i^2} < \infty \ (Konvergens)$ $\Longrightarrow$ $Z_n = \dfrac{X_1+X_2+\ldots+X_n}{n},$ \\[2pt]
+		$Z_n \xrightarrow{1v} m,$ vagyis $\mathbf{P}(\lim\limits_{n \to \infty} Z_n = m) = 1$
+\end{tetel}
+\subsection{Centrális határeloszlás tételek}
+	\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+  IV.5.1 (Centrális határeloszlás tétel - \textit{(Csebisev feltételei)})\\[2pt]
+	\forceindent  Legyenek $X_1,X_2,\ldots,X_n$ azonos eloszlásúak, páronként függetlenek. Létezzék a közös\\[1pt] $m = \EX_i \land$  $D^2 = \Szoras_i \Longrightarrow$  $Z_n = \dfrac{X_1+X_2+\ldots+X_n}{n}$-hoz létezik olyan $Z \in N(0,1)$, hogy $Z_n \xrightarrow{e} Z$,
+	vagyis: $F_{Z_n}(x) = P(Z_n < x) = P(\dfrac{X_1+X_2+\ldots+X_n - n\cdot m}{\sqrt{n \cdot D^2} } < x) \longrightarrow \Gorog{\Phi} (x), \quad $
+	$\mathbf{(n \rightarrow \infty)}, \forall x \in \mathbb{R}$ \\[2pt]
+	\textit{Megjegyzés:}\small Az előző tétel rámutat a normális eloszlásnak az elméletében játszott fontos szerepének okára, tetszőleges eloszlásúval
+színűségi vátozók átlaga normális eloszlást követ.\normalsize \\[3pt]
+\end{tetel}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	IV.5.2 (Moivre-Laplace-tétel - (Bernoulli feltéfelek))\\[2pt]
+	$p_0 = P(X_i = 0) = P(\overline{A}) = q,$ \ $p_1 = P(X_i = 1) = P(A) = p,\ \EX_i = p,\ \Szoras_i = pq.$ \\[2pt]
+	Ekkor a $Z_n = \dfrac{X_1+X_2+\ldots+X_n - n \cdot p}{\sqrt{n \cdot p\cdot (1-p) }}$ valószínűség változó sorozathoz létezik olyan $Z \in N(0,1),$ hogy $Z_n \xrightarrow{e} Z,$ vagyis $F_{Z_n}(x) = P(Z_n <x) \rightarrow  \Phi (x) (n \rightarrow \infty) \forall x \in \mathbb{R}$\\[3pt]
+\end{tetel}
+\subsection{Példák}
+
+	\forceindent 11EA - $X \in B(n,p)$ és n nagy $\Longrightarrow$ $\dfrac{X-np}{\sqrt{npq}} \approx N(0,1) \ldots $ Többi füzet\\[3pt]
+
+	\forceindent \href{http://cs.bme.hu/~pricsi/valszam/valszam11kristof.pdf}{Pricsi 11.gyak/10}\\[-2pt]
+
+	Nagyon egyszerűen megoldható lenne, hiszen ez binomiális eloszlás.\\[2pt] $X \in B(10000,\dfrac{1}{2}) \Rightarrow$  $P(4800 < X < 5200) = \sum\limits_{i=4801}^{5199} {10000 \choose i} \cdot (0.5)^i \cdot (0.5)^{10000-i} = (0.5)^{10000} \cdot \sum\limits_{i=4801}^{5199} {10000 \choose i} $ Ezt nehéz kiszámolni \\[2pt]
+
+	Helyette alkalmazzuk a Moivre-Laplace tételt, legyen $X_i \in B(1,\dfrac{1}{2})$\\[2pt]
+	$\dfrac {\Big( \sum\limits_{i=0}^{n} X_i \Big) - n\cdot \EX_i}{ \sqrt{n \cdot \Szoras_i} } \approx Z \in N(0,1)$ - Szorozzunk be a nevezővel, és adjuk hozzá a szórást\\[2pt]
+	$\Big( \sum\limits_{i=0}^{n} X_i \Big) = Z \sqrt{n \cdot \Szoras_i}  +  n\cdot \EX_i \Longrightarrow K = \Big( \sum\limits_{i=0}^{n} X_i \Big) \in N(n\cdot \EX_i,\sqrt{n \cdot \Szoras_i})$\\[2pt]
+	Behelyettesítve $ K \in N(10000 \cdot 0.5, \sqrt{10000 \cdot (0.5)*(0.5)}) = N(5000,50)$\\[3pt]
+	Innen a becslés: $P(4800 < K < 5200) = \Phi(\dfrac{5000-5200}{50} ) - \Phi(\dfrac{5000-4800}{50} )$\\[2pt]
+	Szummából kivonás lett, ez sokkal könnyebben elvégezhető!

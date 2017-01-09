@@ -1,0 +1,60 @@
+\section{A Valózínűségi váltózók}
+\subsection{Általánosan}
+\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+II.2.2 A valószinűségi változó eloszlása és eloszlásfüggvénye kölcsönösen egyértelműen meghatározzák egymást. \\[8pt]
+\end{tetel}
+
+\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	II.2.3 ($F_x(x)$ eloszlásfüggvény tulajdonságai)
+	\begin{itemize}
+		\item $F_x$ monoton nemcsökkenő, azaz $F_x(x) \leq F_x(y), ha\, x < y.$
+		\item $F_x$ balról folytonos
+		\item $\lim\limits_{x \to +\infty} F_x(x) = 1$ és $\lim\limits_{x \to -\infty} F_x(x) = 0$
+	\end{itemize}
+\end{tetel}
+
+	\begin{definicio}{Mézga Géza}
+   ($f_X(x)$ sűrűségfüggvény tulajdonságai
+	\begin{itemize}
+		\item $f_X(t) \geq 0$ \qquad ( $\Leftarrow F_x \uparrow$ )
+		\item $\int\Vegtelen f_X(t) dt = 1 $ \qquad ( $ \Leftarrow \lim\limits_{t  \to \infty} F_X(t) = 1 )$
+	\end{itemize}
+\end{definicio}
+
+	%TODO ricsi táblázatát az eloszlásokról beszúrni, illetve a normális eloszlásról 1-2 dolgot írni
+	\textbf{Örökifjúak}: Geometriai , Exponenciális
+
+\subsection{A Várható érték}
+	\begin{definicio}{Mézga Géza}
+  II.6.1 \textbf{Várható érték létezése} (Diszkrét,\small folytonos ugyanez csak integral) \\[3pt]\normalsize
+		$\sum\limits_{i=1}^\infty |x_i| \cdot P(X = x_i) Konvergens \Longrightarrow \exists EX$
+		$$ \textbf{E}X = \sum_{i=1}^\infty x_i \cdot P(X = x_i)$$
+
+\end{definicio}
+	%TODO Műveleti tulajdonságok!!!
+
+\subsection{Magasabb momentumok, szórásnégyzet}
+
+  \begin{definicio}{Mézga Géza}
+	II.7.1 \textbf{n-edik momentum} \\[3pt]
+	Az X valószínűségi változó n-edik momentumán az $X^n$ valószínűségi változó várható értékét értjük, ha létezik. \\[3pt]
+	$$Jel: \mu_n =  \textbf{E}X^n = \int\limits_{-\infty}^{+\infty} x^n \cdot f_X(x) dx$$\\[3pt]
+  \end{definicio}
+  \begin{definicio}{Mézga Géza}
+	II.7.2 \textbf{Szórásnégyzet}\\[3pt]
+		Az X valószínűségi változó szórásnégyzetén vagy varianciáján az $ Y = (X - EX)^2$ valószínűségi változó várható értékét értjük( amennyiben létezik)
+	$$\Gorog{\sigma}^2X = \textbf{E}\Big( (X-\textbf{E}X)^2 \Big) $$\\[3pt]
+  \end{definicio}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	II.7.2 \textbf{Steiner formula}\\[-6pt]
+
+	$$\Gorog{\sigma}^2X = \textbf{E}X^2 - (\textbf{E}X)^2 $$\\[3pt]
+
+  \end{tetel}
+
+	%TODO MUveleti tulajdonságok a végére
+	\begin{definicio}{Mézga Géza}
+  II.7.3 \textbf{standardizált}\\[3pt]
+	Az X valószínűségi változó standardizáltján az $\widetilde{X} = \dfrac{X-\EX}{\szoras} $ lineárisan transzformált valószínűségi változót értjük
+\end{definicio}

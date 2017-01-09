@@ -1,0 +1,64 @@
+%%%% Beállítások, importok
+
+\input{includes/header.tex}
+
+\usepackage{relsize}
+\usepackage{pdfpages}
+
+\newcommand{\Gorog}[1]{\mathlarger{\mathlarger{\mathlarger{#1}}}}
+\newcommand{\Vegtelen}{\limits_{-\infty}^{+\infty}}
+\newcommand{\EX}{\textbf{E}X}
+\newcommand{\EY}{\textbf{E}Y}
+\newcommand{\szoras}{\Gorog{\sigma}X}
+\newcommand{\Szoras}{\Gorog{\sigma}^2X}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+
+%%%%
+%%%%%%%
+%%%% Ezeket változtasd meg!
+
+\cim{Valószínűségszámítás}
+\datum{2017. január 9.}
+\szerzo{Kormány Zsolt}
+\segitettek{Bognár Márton}
+
+%%%%
+%%%%%%%
+%%%% Fedlap
+
+\begin{document}
+\begin{titlepage}
+		\centering
+		\vspace{5cm}\par
+		\maketitle
+		\large A jegyzet és annak forrása megtalálható a \texttt{bme-notes.github.io} weboldalon.
+		\vfill
+		Közreműködtek: \the\segitettek
+		\normalsize
+		% Bottom of the page
+\end{titlepage}
+
+%%%%
+%%%%%%%
+%%%% Tartalomjegyzés + előszó
+
+\noindent \textbf{Kellemes vizsgázást!}
+
+\tableofcontents{}
+
+\section{Előszó}
+\href{http://vik.wiki/images/e/e7/Valszam_konyv_olvashato_kela.pdf}{Szamozas Kela 1998-as konyve szerint}
+
+%%%%
+%%%%%%%
+%%%% Tényleges content
+%%%% A fejezeteket a fejezetek/$NEV.tex elérési útvonalon keresi
+%% Első "fejezet"
+\ujfejezet{valoszinusegi-mezo}
+%% Második "fejezet"
+\ujfejezet{valoszinusegi-valtozok}
+\ujfejezet{valoszinusegi-vektorvaltozok}
+\ujfejezet{nagyszamok}
+\ujfejezet{tulelo}
+
+\end{document}

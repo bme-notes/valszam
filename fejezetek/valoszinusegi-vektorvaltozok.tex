@@ -1,0 +1,112 @@
+\section{Valószínűségi vektorváltozók}
+
+\subsection{Alapok}
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	III.1.3 Ha ismert a közös eloszlás függvény $F_{X_1,X_2,\ldots,X_n}(x_1,x_2,\ldots,x_n) \Longrightarrow $ Akkor ebből bármelyik vetületi eloszlásfüggvény meghatározható. \\[3pt]
+\small \textbf{M} $\nLeftarrow Megforditasa\, nem\, igaz\, (\, \varepsilon -os\, pelda)$
+\normalsize \\[6pt]
+\end{tetel}
+
+  \begin{definicio}{Mézga Géza}
+	III.1.5 (Függetlenség)\\[3pt]
+	$X_1,X_2,\ldots,X_p$ páronként függetlenek, ha $\forall\, 1 \leq i < j \leq n$ -re $F_{X_i,X_j}(x,y) = F_{X_i}(x) \cdot F_{X_j}(y)$ teljesül $\forall x,y \in \mathbb{R} $-re
+\end{definicio}
+
+\subsection{Transzformációk}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	III.4.2 (X + Y = Z)\\[3pt]
+	$f_{X,Y}(x,y)$ jelölje az együttes sűrűségfüggvényüket, ekkor $Z = X + Y$ sűrűségfüggvénye:\\[2pt]
+\forceindent	$f_Z(x) = \int\Vegtelen f_{X,Y}(t,x-t) dt = \int\Vegtelen f_{X,Y}(x-t,t) dt$\\[2pt]
+Ha $X$ és $Y$ \textit{Függetlenek}: \\[2pt]
+\forceindent 	$f_Z(x) = \int\Vegtelen f_X(t) \cdot f_Y(x-t) dt = \int\Vegtelen f_X(x-t) \cdot f_Y(t) dt$\\[6pt]
+\end{tetel}
+
+\textbf{\textit{Példák:}}($X,Y$ független)
+	\begin{enumerate}
+ 		\item Poisson --  $X \in P_0(\lambda), Y \in P_0(\mu) \land Z = X + Y \Longrightarrow$  $Z \in$ $P_0(\lambda + \mu)$
+ 		\item Geometriai -- $X,Y \in G(p)\, \land$\, $ Z = X + Y$  $\Longrightarrow$ $\textbf{P}(Z = k) = (k-1) p^2 q^{k-2}$ (Negatív binomiális eloszlás)
+ 		\item Exponenciális -- $X,Y \in E(\lambda), \lambda > 0 \land Z = X + Y \Longrightarrow$ $ \Gorog{\lambda^2 \cdot t \cdot e^{-\lambda \cdot t} },\,\, t > 0$ %TODO Lehet nemjó utána nézni
+ 		\item Exponenciális -- $X \in E(\lambda) \land Z = 2X \Longrightarrow Z \in E(\dfrac{\lambda}{2}) $
+	\end{enumerate}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	(9.EA) \textbf{(Normalis eloszlas konvulúciója)} \\[2pt]
+		$X \in N(m_1,D_1), Y \in N(m_2,D_2) Z = X+Y $ \textbf{függetlenek} $\Longrightarrow\, Z \in N(m_1+m_2 , \sqrt{D^2_1 + D^2_2} ) $
+\end{tetel}
+
+\subsection{Kovarancia}
+
+  \begin{definicio}{Mézga Géza}
+	III.5.1 (Kovarancia)\\[3pt]
+		Tegyük fel hogy X és Y valószínűségi változónak $\exists $ szórásnégyezetük. Ekkor X és Y kovaranciája:\\[3pt]
+		\forceindent $cov(X,Y) = \textbf{E}[(X-\EX)\cdot(Y-\EY)]$ \\[2pt]
+		\forceindent $cov(X,Y) = \textbf{E}(X\cdot Y)-(\EX)\cdot (\EY)$ \\[3pt]
+		\forceindent $\textbf{R}(X,Y) = cov(\widetilde{X},\widetilde{Y}) = \dfrac{cov(X,Y)}{\szoras \cdot \Gorog{\sigma}Y}$\\[2pt]
+	korrelációs együttható alatt a kovarancia standardizáltját értjük\\[6pt]
+\end{definicio}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	III.5.2 (Függetlenség)\\[3pt]
+	\forceindent Ha X és Y függetlenek, $\Longrightarrow$ $cov(X,Y) = R(X,Y) = 0 $\\[2pt]
+	\small \textit{Megforditas nem igaz } $\nLeftarrow$\\[6pt] \normalsize
+\end{tetel}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	III.5.7 (Korrelációs együttható lineáris összefüggése)\\[3pt]
+		\forceindent $\textbf{R}(X,Y) = \pm 1 \Longleftrightarrow \exists a,b \in \mathbb{R} : \textbf{P}(X = a \cdot Y + B ) = 1 \quad( \pm = sign(a) ) $\\[6pt]
+\end{tetel}
+
+	\begin{definicio}{Mézga Géza}
+   $2 \times 2$ Kovarancia mátrix:
+\[ \left( \begin{array}{cc}
+cov(x,x) & cov(x,y) \\
+cov(y,x) & cov(y,y) \end{array} \right) \quad  \Longleftrightarrow \quad
+ \left( \begin{array}{cc}
+\Szoras & cov(x,y) \\
+cov(y,x) & \Gorog{\sigma}^2Y \end{array} \right)\]
+\end{definicio}
+
+\subsection{Feltételes várható érték}
+	\begin{itemize}
+
+		\item DI
+
+    \begin{definicio}{Mézga Géza}
+			III.6.1 \\[2pt]
+			 \forceindent	Legyen $A \in \mathfrak{F}, P(A) > 0$ tetszőleges esemény, X DI v.v.\\[2pt]
+			 \forceindent Ekkor $\mathbf{P} (X = x_i|A)  = \dfrac{ \mathbf{P}(X = x_i, A) }{\mathbf{P} (A) } \ $ X \textit{feltételes eloszlása} A-ra nézve
+\end{definicio}
+
+       \begin{definicio}{Mézga Géza}
+			III.6.2
+			\begin{itemize}
+				\item $\mathbf{E}(X \, |\, Y = y_j) = \sum\limits_{\forall x_i} x_i \cdot \mathbf{P} (X = x_i |\, Y = y_j) = r(y_j) $  X feltételes várható értéke az $Y = y_j$ feltétel mellett
+			\end{itemize}
+      \end{definicio}
+
+		\item FI \\[-6pt]
+
+    \begin{definicio}{Mézga Géza}
+			III.6.3 \\[2pt]
+				\forceindent $F_{X|Y}(x|y) = \dfrac{ \dfrac{ \partial F_{X,Y}(x,y)} {\partial y} }{ f_Y(y) }$\\[3pt]
+
+				\forceindent $f_{X|Y}(x|y) = \dfrac{ \dfrac{ \partial^2 F_{X,Y}(x,y)} {\partial y \partial x} }{ f_Y(y) } = \dfrac{f_{X,Y}(x,y) }{ f_y(y) }$\\[2pt]
+\end{definicio}
+        \begin{definicio}{Mézga Géza}
+			III.6.5 (\textbf{Regresszió} vagy X nek Y ra vonatkozó feltételes várható értéke)
+			\begin{itemize}
+				\item $\mathbf{E}(X \, |\, Y ) = r(Y) = \int\Vegtelen x \cdot f_{X|Y}(x|y) dx = \dfrac{ \int\Vegtelen x \cdot f_{X,Y}(x,y) }{ f_Y(y) }$
+			\end{itemize}
+      \end{definicio}
+	\end{itemize}
+
+	\textbf{ (Regresszió tulajdonságai) } %TODO Műveleti Tulajdonságokhoz külön kirakni(Ricsi táblázat összesűrítve)
+\begin{enumerate}
+	\item $\mathbf{E}( \mathbf{E} ( X|Y ) ) = \EX$
+	\item $\mathbf{E}( h(Y) \cdot X|Y ) = h(Y) \cdot \mathbf{E}(X | Y ) $
+	\item $\mathbf{E} (X | Y) = \EX$ ha $X$ és $Y$ \textbf{Függetlenek}
+\end{enumerate}
+
+	\textbf{Lineáris regresszió: }\\[2pt]
+	\forceindent $\Gorog{y} \approx $ $a^*X+b^* = \mathbf{R}( X,Y)\dfrac{\Gorog{\sigma} Y}{\szoras} X + \mathbf{E}Y - \mathbf{R}(X,Y) \dfrac{\Gorog{\sigma} Y}{\szoras} \EX \ = (X - \EX) \dfrac{\Gorog{\sigma} Y}{\szoras} \mathbf{R}(X,Y) + \mathbf{E}Y$

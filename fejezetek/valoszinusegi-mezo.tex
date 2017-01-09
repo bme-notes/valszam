@@ -1,0 +1,57 @@
+\section{A Kolmogorov-féle valószinűségi mező}
+\subsection{Alapok}
+
+\begin{definicio}{Mézga Géza}
+ \textit{Az A és B események egymást kizáróak, ha \textit{AB} = $\emptyset$,azaz szorzatuk a lehetetlen esemény. Egymást kizáró események egyidejűleg nem következnek be.}
+\end{definicio}
+
+\begin{definicio}{Mézga Géza}
+I.1.13 \textbf{Teljes eseményrendszer} \\[4pt]
+	 	AZ $A_1,A_2,\ldots ,A_n, \ldots $ események teljes eseményrendszert alkot, ha i,j-re $(i \neq j )\ \  A_i \cdot A_j = \emptyset, $ ( páronként egymást kizárják ) és $\sum\limits_{\forall i}A_i = \Omega $
+\end{definicio}
+
+\subsection{Axiómák}
+	\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+  I.1.3 A valószinűségi axiómarendszerébl levezethetőek a valószinűség alábbi tulajdonságai:
+	\begin{enumerate}
+		\item P(A\textbackslash B) = P(A) -- P(AB)
+		\item Ha  A $\subseteq$ B $\rightarrow$ P(A) $\leq$ P(B).
+	\end{enumerate}
+  \end{tetel}
+
+	\begin{tetel}{MZ/X használhatatlan cuccokat küld}
+  I.1.5 (Boole-egyenlőtlenség)
+	\begin{enumerate}
+		\item P\Bigg($\sum\limits_{i=1}^n A_i \Bigg) \leq \sum\limits_{i=1}^nP(A_i)$
+		\item P\Bigg($\prod\limits_{i=1}^n A_i \Bigg) \geq 1 - \sum\limits_{i=1}^n P\Big( $ \hspace{0.2mm}$ \overline{A}_i \hspace{0.2mm}\Big) $
+	\end{enumerate}
+\end{tetel}
+
+\subsection{Feltételes valószinűség és az események függetlensége}
+ 	\begin{definicio}{Mézga Géza}
+   I.4.1. $A$ esemény $B$ re vonatkoztatott \textbf{feltételes valószinűségén} a következőt értjük \\[5pt] $$P(A|B) = \dfrac{P(AB)}{P(B)}$$
+\end{definicio}
+  \begin{definicio}{Mézga Géza}
+	I.4.2. \textbf{Függetlenség}
+	\begin{center}
+		A és B függetlenek $\Longleftrightarrow$ $\mathbf{P}(AB) = \mathbf{P}(A) \mathbf{P}(B)$
+	\end{center}
+\end{definicio}
+
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	I.4.2 Ha $A,B$ függetlenek $\Longrightarrow$
+	\begin{enumerate}
+		\item $A$ és $\overline{B}$
+		\item $\overline{A}$ és $B$,
+		\item $\overline{A}$ és $\overline{B}$
+	\end{enumerate}
+	$\quad\quad$is \textbf{függetlenek}.\\[3pt]
+	\small Mukodik $n$-re is, bármennyinek vesszük komplementerét!! \\[5pt]
+\end{tetel}
+
+	\normalsize
+  \begin{tetel}{MZ/X használhatatlan cuccokat küld}
+	I.4.8 (Bayes tétele) \\[5pt]
+	Alkosson $A_1,A_2,\ldots,A_n,\ldots \in \Im$ teljes eseményrendszert, vagyis $A_i \cdot A_j = \emptyset$ ( $i \neq j$ ) és $\sum\limits_{i=1}^\infty A_i = \Omega$ (Továbbá $P(A_i) >0 \quad\forall i-re$ .) $\Longrightarrow$
+	Tetszőleges B eseményre, ahol P(B) $>$ 0 \quad \\$$P(A_i|B) = \dfrac{P(B|A_i)P(A_i)}{\sum\limits_{j=1}^\infty P(B|A_j)P(A_j)}$$
+\end{tetel}
